@@ -14,11 +14,6 @@ function goToNextSlide(){
         items[itemActive].classList.add('active');
         circles[itemActive].classList.add('active');
         thumbnails[itemActive].classList.add('active')
-
-        prev.classList.remove('hidden')
-        if(itemActive === items.length -1){
-            next.classList.add('hidden');
-        }
     }
     else{
         items[itemActive].classList.remove('active');
@@ -105,6 +100,21 @@ circles[itemActive].classList.add('active');
 const thumbnails =document.getElementsByClassName('thumb');
 thumbnails[itemActive].classList.add('active')
 
+for(let i = 0; i < thumbnails.length; i++){
+    let thumb = thumbnails[i];
+    thumb.addEventListener('click', function(){
+        items[itemActive].classList.remove('active')
+        circles[itemActive].classList.remove('active')
+        thumbnails[itemActive].classList.remove('active')
+
+        itemActive = i
+
+        items[itemActive].classList.add('active')
+        circles[itemActive].classList.add('active')
+        thumbnails[itemActive].classList.add('active')
+    })
+}
+
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
 
@@ -126,11 +136,6 @@ prev.addEventListener('click', function(){
         items[itemActive].classList.add('active');
         circles[itemActive].classList.add('active');
         thumbnails[itemActive].classList.add('active')
-
-        next.classList.remove('hidden')
-        if(itemActive === 0){
-            prev.classList.add('hidden');
-        }
     }
     else{
         items[itemActive].classList.remove('active');
