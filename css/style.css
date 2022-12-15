@@ -21,12 +21,9 @@
     position:relative;
 }
 
-.item{
-    display: none;
-}
 
 .thumbnails{
-
+    
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -51,13 +48,33 @@
     opacity: 1;
 }
 
+.item{
+    display: none;
+    position: relative;
+}
+
 .item-slider, .item, img{
     height: 100%
+}
+
+.item.active{
+    display: block;
 }
 
 .item img{
     width: 100%;
     object-fit: cover;
+}
+
+.item-description{
+    width: 528px;
+    font-size: 15px;
+    position: absolute;
+    bottom: 50px;
+    left: 15%;
+    color: white;
+    background-color: rgba(128, 128, 128, 0.638);
+    padding: 10px;
 }
 
 .arrow{
@@ -85,9 +102,6 @@
     background-color: rgba(174, 174, 174, 1);   
 }
 
-.item.active{
-    display: block;
-}
 
 .circles-container{
     display: flex;

@@ -35,11 +35,31 @@ function goToNextSlide(){
 
 //Creo array immagini
 const imagesArray = [
-    "01.webp",
-    "02.webp",
-    "03.webp",
-    "04.webp",
-    "05.webp"
+    {
+       image: "01.webp",
+       title: 'Marvel\'s Spiderman Miles Morale',
+       description: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.'
+    },
+    {
+       image: "02.webp",
+       title: 'Marvel\'s Spiderman Miles Morale',
+       description: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.'
+    },
+    {
+       image: "03.webp",
+       title: 'Marvel\'s Spiderman Miles Morale',
+       description: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.'
+    },
+    {
+       image: "04.webp",
+       title: 'Marvel\'s Spiderman Miles Morale',
+       description: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.'
+    },
+    {
+       image: "05.webp",
+       title: 'Marvel\'s Spiderman Miles Morale',
+       description: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.'
+    }
 ]
 
 //Creiamo dinamicamente i div con le immagini del carosello
@@ -47,12 +67,17 @@ let itemsContent = '';
 let itemsThumbnails = '';
 
 for(let i = 0; i < imagesArray.length; i++){
-    itemsContent += `<div class="item">
-        <img src="./img/${imagesArray[i]}">
+    itemsContent += `
+    <div class="item">
+        <img src="./img/${imagesArray[i].image}">
+        <div class="item-description"> 
+        <h2>${imagesArray[i].title}</h2>
+        <p>${imagesArray[i].description}</p>
+        </div>
     </div>`;
 
     itemsThumbnails += `<div class="thumb">
-        <img src="./img/${imagesArray[i]}">
+        <img src="./img/${imagesArray[i].image}">
     </div>`;
 }
 
